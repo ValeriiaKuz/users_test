@@ -1,0 +1,11 @@
+.user_item {
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+  gap: 1rem;
+  background-color: rgba(33, 50, 67, 0.7);
+  color: var(--bg-color);
+  padding: 1rem;
+}
+.user_item__property {
+}
