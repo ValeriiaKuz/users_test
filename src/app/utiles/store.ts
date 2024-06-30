@@ -2,8 +2,10 @@ import type { Action, ThunkAction } from '@reduxjs/toolkit';
 import { combineSlices, configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import createSagaMiddleware from 'redux-saga';
+import { usersSlice } from './slice';
+import { rootSaga } from './saga';
 
-const rootReducer = combineSlices();
+const rootReducer = combineSlices(usersSlice);
 export type RootState = ReturnType<typeof rootReducer>;
 const sagaMiddleware = createSagaMiddleware();
 export const makeStore = (preloadedState?: Partial<RootState>) => {
@@ -21,6 +23,7 @@ export const makeStore = (preloadedState?: Partial<RootState>) => {
 };
 
 export const store = makeStore();
+sagaMiddleware.run(rootSaga);
 
 export type AppStore = typeof store;
 export type AppDispatch = AppStore['dispatch'];
