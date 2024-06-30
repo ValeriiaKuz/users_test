@@ -1,0 +1,59 @@
+@font-face {
+  font-family: MainFont;
+  src: url('./assets/fonts/GolosText-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: TitleFont;
+  src: url('./assets/fonts/SpaceMono-Regular.ttf');
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: rgb(248, 247, 247);
+  --text-color: rgb(18, 25, 33);
+  --brand-color: rgba(33, 50, 67);
+  --accent-color: rgba(201, 212, 12);
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 1.6rem;
+  font-family: MainFont, serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: TitleFont, sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.button {
+  padding: 1rem 6rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  max-width: max-content;
+}

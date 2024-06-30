@@ -1,0 +1,60 @@
+.main_content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.users_form__section,
+.users_list__section {
+  padding: 2rem 3rem;
+  min-height: 100dvh;
+}
+.users_form__section {
+  background-color: var(--brand-color);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--bg-color);
+}
+.users_list__section {
+  gap: 2rem;
+}
+
+.users_form__title {
+  text-transform: uppercase;
+  font-size: 3.6rem;
+  font-weight: 200;
+  letter-spacing: 0.15rem;
+}
+.users_list__section {
+  position: relative;
+  background: url('../../../assets/images/bg.png') no-repeat center;
+  background-size: cover;
+  display: grid;
+  grid-template-areas:
+    'title button'
+    'list list';
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: min-content auto;
+}
+.users_list__title {
+  text-transform: uppercase;
+  font-size: 2.8rem;
+  font-weight: 200;
+  letter-spacing: 0.15rem;
+  grid-area: title;
+}
+.user_list__button {
+  background-color: var(--accent-color);
+  grid-area: button;
+  transition: all ease-in 300ms;
+  margin-left: auto;
+}
+.users_list__wrapper {
+  grid-area: list;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .user_list__button:hover {
+    background-color: var(--brand-color);
+    color: var(--bg-color);
+  }
+}
