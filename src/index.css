@@ -59,3 +59,9 @@ a {
   font-size: 1.8rem;
   text-transform: uppercase;
 }
+
+@media (max-width: 940px){
+  .button {
+    padding: 1rem 4rem;
+  }
+}
