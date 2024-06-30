@@ -13,7 +13,7 @@ export const UsersPage = () => {
         <FormWithFormik />
       </section>
       <section className={styles.users_list__section}>
-        <h2 className={styles.users_list__title}>Users:</h2>
+        <h2 className={styles.users_list__title}>Users</h2>
         <Button
           type={'submit'}
           className={`button ${styles.user_list__button}`}

@@ -56,4 +56,6 @@ a {
   background-color: transparent;
   cursor: pointer;
   max-width: max-content;
+  font-size: 1.8rem;
+  text-transform: uppercase;
 }

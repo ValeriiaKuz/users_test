@@ -6,7 +6,13 @@ export const UsersList = () => {
   return (
     <ul className={styles.users_list}>
       {users?.map((user) => (
-        <User userName={user.userName} name={user.name} email={user.email} key={crypto.randomUUID()} />
+        <User
+          username={user.username}
+          name={user.name}
+          email={user.email}
+          key={crypto.randomUUID()}
+          id={user.id}
+        />
       ))}
     </ul>
   );
