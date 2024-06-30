@@ -15,13 +15,22 @@ export const usersRequest = async (): Promise<UserType[]> => {
   }
 };
 
-export const createUserRequest = async ({ name, userName, email }: UserType) => {
+export const createUserRequest = async ({ name, username, email }: Omit<UserType, 'id'>) => {
   try {
     return await axiosRequest.post(`/users`, {
       name: name,
-      userName: userName,
+      username: username,
       email: email
     });
+  } catch (error) {
+    console.error('Error fetching projects: ', error);
+    throw error;
+  }
+};
+
+export const deleteUserRequest = async (id: number) => {
+  try {
+    return await axiosRequest.delete(`/users/${id}`);
   } catch (error) {
     console.error('Error fetching projects: ', error);
     throw error;

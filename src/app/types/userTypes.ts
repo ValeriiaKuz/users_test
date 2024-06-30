@@ -1,10 +1,11 @@
 export interface UserType {
+  id: number;
   name: string;
-  userName: string;
+  username: string;
   email: string;
 }
 export interface UsersState {
-  users: UserType[] | null;
+  users: UserType[];
   isLoading: boolean;
   isError: boolean;
   errorMessage: null | string;
