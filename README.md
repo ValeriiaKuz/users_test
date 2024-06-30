@@ -1,27 +1,6 @@
-# vite-template-redux
-
-Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Testing Library](https://github.com/testing-library/react-testing-library) to create a modern [React](https://react.dev/) app compatible with [Create React App](https://create-react-app.dev/)
-
-```sh
-npx degit reduxjs/redux-templates/packages/vite-template-redux my-app
-```
-
-## Goals
-
-- Easy migration from Create React App or Vite
-- As beginner friendly as Create React App
-- Optimized performance compared to Create React App
-- Customizable without ejecting
-
-## Scripts
-
-- `dev`/`start` - start dev server and open browser
-- `build` - build for production
-- `preview` - locally preview production build
-- `test` - launch test runner
-
-## Inspiration
-
-- [Create React App](https://github.com/facebook/create-react-app/tree/main/packages/cra-template)
-- [Vite](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react)
-- [Vitest](https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib)
+В реализации я истольковала данный стэк технологий:
+TypeScript, React, Redux Toolkit, Redux-Saga, Axios, Formik, Yup, Vite, react-toastify, Css modules
+Fake Api - JSON placeholder
+Особенности работы с API:
+при запросе на создание в респонсе приходит созданный юзер с переданными полями и с id, по факту он не создается на сервере, поэтому по успешному ответу я добавляю юзера из ответа в store для актуального отображения 
+при запросе на удаление пользователя передаю id пользователя и обращаюсь к endpoint baseurl/users/${id}, ответ приходит пустой со статусом 200, после этого необходимо было бы делать запрос за актуальными пользователями, но так как данные на сервере не обновляются, то я при успешном ответе передаю id далее для обновления store 
