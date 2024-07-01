@@ -7,7 +7,7 @@ import {
   getUsersSuccessAction
 } from './slice';
 import { put, takeLatest, fork, call, all } from 'redux-saga/effects';
-import { createUserRequest, deleteUserRequest, usersRequest } from '../API/requests';
+import { createUser, deleteUserRequest, fetchUsers } from '../API/requests';
 import type { UserType } from '../types/userTypes';
 import type { AxiosResponse } from 'axios';
 import type { PayloadAction } from '@reduxjs/toolkit';
@@ -16,7 +16,7 @@ import { toast } from 'react-toastify';
 function* getUsersSaga() {
   try {
     toast.loading('Loading...');
-    const response: AxiosResponse<UserType[]> = yield call(usersRequest);
+    const response: AxiosResponse<UserType[]> = yield call(fetchUsers);
     yield put(getUsersSuccessAction(response.data));
     toast.dismiss();
     toast.success('Users received');
@@ -31,7 +31,7 @@ function* getUsersSaga() {
 function* createUserSaga({ payload: { name, username, email } }: PayloadAction<Omit<UserType, 'id'>>) {
   try {
     toast.loading('Loading...');
-    const response: AxiosResponse<UserType> = yield call(() => createUserRequest({ name, username, email }));
+    const response: AxiosResponse<UserType> = yield call(() => createUser({ name, username, email }));
     yield put(createUserSuccessAction(response.data));
     toast.dismiss();
     toast.success('User created');

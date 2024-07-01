@@ -6,7 +6,7 @@ export const baseURL = API_URL;
 export const axiosRequest = axios.create({
   baseURL: baseURL
 });
-export const usersRequest = async (): Promise<UserType[]> => {
+export const fetchUsers = async (): Promise<UserType[]> => {
   try {
     return await axiosRequest.get(`/users`);
   } catch (error) {
@@ -15,7 +15,7 @@ export const usersRequest = async (): Promise<UserType[]> => {
   }
 };
 
-export const createUserRequest = async ({ name, username, email }: Omit<UserType, 'id'>) => {
+export const createUser = async ({ name, username, email }: Omit<UserType, 'id'>) => {
   try {
     return await axiosRequest.post(`/users`, {
       name: name,
