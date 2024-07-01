@@ -3,8 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ValeriiaKuz.github.io/users_test",
-
+  "homepage": "https://valeriiakuz.github.io/users_test/",
   "scripts": {
     "dev": "vite",
     "start": "vite",
@@ -16,8 +15,7 @@
     "lint:fix": "eslint --fix .",
     "type-check": "tsc --noEmit",
     "pre-commit": "npm run lint:fix && npm run lint && npm run format && npm run type-check",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build && npx gh-pages -d dist"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
